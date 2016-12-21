@@ -1,0 +1,17 @@
+﻿<ul>
+    @foreach (var mode in DisplayModeProvider.Instance.Modes)
+            {
+                var displayModeId = string.IsNullOrEmpty(mode.DisplayModeId)
+                                        ? "(no suffix)"
+                                        : mode.DisplayModeId;
+
+                if (mode.CanHandleContext(new HttpContextWrapper(HttpContext.Current)))
+                {
+            <li class="text-danger">@displayModeId</li>
+        }
+        else
+        {
+            <li class="text-muted">@displayModeId</li>
+        }
+    }
+</ul>
