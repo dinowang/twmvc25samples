@@ -8,22 +8,3 @@
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>View A/B testing</h2>
-        <p class="text-muted">難度 ★ / ★★★</p>
-        <p>
-            @Html.Action("Setup")
-        </p>
-    </div>
-    <div class="col-md-4">
-        <h2>Display Mode candidates</h2>
-        @Html.Partial("_DisplayModeCabdidates")
-    </div>
-    <div class="col-md-4">
-        <h2>Action A/B testing</h2>
-        <p class="text-muted">難度 ★★★</p>
-        @*<p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>*@
-        <p><a class="btn btn-default" href="@Url.Action("Index", "CtrlTest")" target="_blank">Learn more &raquo;</a></p>
-    </div>
-</div>

@@ -38,25 +38,27 @@ namespace twmvc25.Controllers
             ActionDescriptor actionDescriptor,
             IDictionary<string, object> parameters)
         {
-            var preview = actionDescriptor
-                                .GetCustomAttributes(typeof(AlternativeActionAttribute), true)
-                                .Cast<AlternativeActionAttribute>()
-                                .FirstOrDefault();
+            var actualActionDescriptor = actionDescriptor;
+            var alternatives = actionDescriptor
+                                    .GetCustomAttributes(typeof(AlternativeActionAttribute), true)
+                                    .Cast<AlternativeActionAttribute>();
 
-            if (preview != null && preview.Evaluate(controllerContext))
+            foreach (var alternative in alternatives)
             {
-                if (preview.OverrideRouteValue)
+                if (alternative.Evaluate(controllerContext))
                 {
-                    var routeValues = controllerContext.RequestContext.RouteData.Values;
-                    routeValues["action"] = preview.AlternativeActionName;
+                    if (alternative.OverrideRouteValue)
+                    {
+                        var routeValues = controllerContext.RequestContext.RouteData.Values;
+                        routeValues["action"] = alternative.AlternativeActionName;
+                    }
+
+                    actualActionDescriptor = FindAction(controllerContext, actionDescriptor.ControllerDescriptor, alternative.AlternativeActionName);
+                    break;
                 }
-
-                var alternativeActionDescriptor = FindAction(controllerContext, actionDescriptor.ControllerDescriptor, preview.AlternativeActionName);
-
-                return base.InvokeActionMethod(controllerContext, alternativeActionDescriptor, parameters);
             }
 
-            return base.InvokeActionMethod(controllerContext, actionDescriptor, parameters);
+            return base.InvokeActionMethod(controllerContext, actualActionDescriptor, parameters);
         }
     }
 
@@ -72,10 +74,7 @@ namespace twmvc25.Controllers
             AlternativeActionName = alternateActionName;
         }
 
-        public virtual bool Evaluate(ControllerContext controllerContext)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract bool Evaluate(ControllerContext controllerContext);
     }
 
     public class PreviewActionAttribute : AlternativeActionAttribute

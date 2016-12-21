@@ -44,6 +44,11 @@ namespace twmvc25.Controllers
             Response.SetCookie(previewCookie);
             Response.SetCookie(themeCookie);
 
+            if (Request.UrlReferrer != null)
+            {
+                return Redirect(Request.UrlReferrer.ToString());
+            }
+
             return RedirectToAction("Index", "Home");
         }
 
