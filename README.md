@@ -1,8 +1,8 @@
-# ASP.NET MVC A/B Testing
+ï»¿# ASP.NET MVC A/B Testing
 
 ## Information
 
-twMVC#25 | A/B Testing ªº¬Ü¨¤»P¸ê®ÆµøÄ±¤Æ
+twMVC#25 | A/B Testing çš„çœ‰è§’èˆ‡è³‡æ–™è¦–è¦ºåŒ–
 
 - [Event Information](https://mvc.tw/event/2016/12/24)
 - [Slide](https://mvc.tw/event/2016/12/24)
