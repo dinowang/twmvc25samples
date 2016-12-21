@@ -2,7 +2,7 @@
 
 ## Information
 
-twMVC#25 | A/B Testing 的眉角與資料視覺化
+twMVC#25 | ASP.NET MVC A/B Testing 的眉眉角角
 
 - [Event Information](https://mvc.tw/event/2016/12/24)
 - [Slide](https://mvc.tw/event/2016/12/24)
