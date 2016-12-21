@@ -61,7 +61,7 @@ namespace twmvc25.Controllers
     }
 
     [AttributeUsage(AttributeTargets.Method)]
-    public class AlternativeActionAttribute : Attribute
+    public abstract class AlternativeActionAttribute : Attribute
     {
         public string AlternativeActionName { get; private set; }
 
