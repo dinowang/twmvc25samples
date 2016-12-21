@@ -14,7 +14,7 @@ namespace twmvc25.Controllers
             return new AlternativeActionInvoker();
         }
 
-        [PreviewAction("IndexPreview", OverrideRouteValue = false)]
+        [PreviewAction("IndexPreview")]
         public ActionResult Index()
         {
             ViewBag.Message = "Hello! This is Index speaking";
@@ -60,11 +60,12 @@ namespace twmvc25.Controllers
         }
     }
 
+    [AttributeUsage(AttributeTargets.Method)]
     public class AlternativeActionAttribute : Attribute
     {
         public string AlternativeActionName { get; private set; }
 
-        public bool OverrideRouteValue { get; set; } = true;
+        public bool OverrideRouteValue { get; set; }
 
         public AlternativeActionAttribute(string alternateActionName)
         {
