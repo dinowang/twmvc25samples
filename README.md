@@ -16,3 +16,29 @@ Using ASP.NET MVC Display Modes approach, see [~/App_Start/DisplayModeConfig.cs]
 ### Action A/B Testing
 
 Using customized IActionInvoker approach, see [~/Controller/CtrlTestController.cs](twmvc25/Controllers/CtrlTestController.cs)
+
+- Behavior 1  
+  ![Alt text](http://g.gravizo.com/g?
+  digraph G {
+  node [shape=rect];
+  "Request http://localhost/CtrlTest" -> "CtrlTestController";
+  "CtrlTestController" -> "Index" [style=dotted];
+  "CtrlTestController" -> "IndexPreview" [color=red][label="instead action"];
+  "Index" -> "Index.cshtml" [style=dotted];
+  "IndexPreview" -> "Index.cshtml" [color=red];
+  "Index.cshtml" -> "Response to browser" [style=dotted];
+  }
+  )
+- Behavior 2  
+  ![Alt text](http://g.gravizo.com/g?
+  digraph G {
+  node [shape=rect];
+  "Request http://localhost/CtrlTest" -> "CtrlTestController";
+  "CtrlTestController" -> "Index" [style=dotted];
+  "CtrlTestController" -> "IndexPreview" [color=red][label="instead action"];
+  "Index" -> "Index.cshtml" [style=dotted];
+  "IndexPreview" -> "IndexPreview.cshtml" [color=red];
+  "Index.cshtml" -> "Response to browser" [style=dotted];
+  "IndexPreview.cshtml" -> "Response to browser" [color=red];
+  }
+  )
