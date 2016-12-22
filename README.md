@@ -20,21 +20,24 @@ Using customized IActionInvoker approach, see [~/Controller/CtrlTestController.c
 - Behavior 1  
   ![Alt text](http://g.gravizo.com/svg?
   digraph G {
+  pad = .5;
   node [shape=rect];
-  "Request" [label="Request\nhttp://localhost/CtrlTest"];
+  "Request" [label="Request http://localhost/CtrlTest"];
   "Request" -> "CtrlTestController";
   "CtrlTestController" -> "Index" [style=dotted];
   "CtrlTestController" -> "IndexPreview" [color=red][label="instead method"];
   "Index" -> "Index.cshtml" [style=dotted];
-  "IndexPreview" -> "Index.cshtml" [style=red];
+  "IndexPreview" -> "Index.cshtml" [color=red];
   "Index.cshtml" -> "Response to browser";
   }
   )
 - Behavior 2  
   ![Alt text](http://g.gravizo.com/svg?
   digraph G {
+  pad = .5;
   node [shape=rect];
-  "Request http://localhost/CtrlTest" -> "CtrlTestController";
+  "Request" [label="Request http://localhost/CtrlTest"];
+  "Request" -> "CtrlTestController";
   "CtrlTestController" -> "Index" [style=dotted];
   "CtrlTestController" -> "IndexPreview" [color=red][label="instead action"];
   "Index" -> "Index.cshtml" [style=dotted];
