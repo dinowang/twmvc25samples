@@ -24,9 +24,9 @@ Using customized IActionInvoker approach, see [~/Controller/CtrlTestController.c
   node [shape=rect];
   "Request" [label="Request http://localhost/CtrlTest"];
   "Request" -> "CtrlTestController";
-  "CtrlTestController" -> "Index" [style=dotted];
-  "CtrlTestController" -> "IndexPreview" [color=red][label="instead method"];
-  "Index" -> "Index.cshtml" [style=dotted];
+  "CtrlTestController" -> "Index" [color=blue, label="A"];
+  "CtrlTestController" -> "IndexPreview" [color=red, label="B"];
+  "Index" -> "Index.cshtml" [color=blue];
   "IndexPreview" -> "Index.cshtml" [color=red];
   "Index.cshtml" -> "Response to browser";
   }
@@ -38,11 +38,11 @@ Using customized IActionInvoker approach, see [~/Controller/CtrlTestController.c
   node [shape=rect];
   "Request" [label="Request http://localhost/CtrlTest"];
   "Request" -> "CtrlTestController";
-  "CtrlTestController" -> "Index" [style=dotted];
-  "CtrlTestController" -> "IndexPreview" [color=red][label="instead action"];
-  "Index" -> "Index.cshtml" [style=dotted];
+  "CtrlTestController" -> "Index" [color=blue, label="A"];
+  "CtrlTestController" -> "IndexPreview" [color=red, label="B"];
+  "Index" -> "Index.cshtml" [color=blue];
   "IndexPreview" -> "IndexPreview.cshtml" [color=red];
-  "Index.cshtml" -> "Response to browser" [style=dotted];
+  "Index.cshtml" -> "Response to browser" [color=blue];
   "IndexPreview.cshtml" -> "Response to browser" [color=red];
   }
   )
