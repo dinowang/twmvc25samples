@@ -1,5 +1,7 @@
 ﻿# ASP.NET MVC A/B Testing
 
+A/B testing aka split testing, bucket testing
+
 ## Information
 
 twMVC#25 | ASP.NET MVC A/B Testing 的眉眉角角
