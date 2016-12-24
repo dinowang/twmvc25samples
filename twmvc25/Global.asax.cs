@@ -18,7 +18,8 @@ namespace twmvc25
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            DisplayModeConfig.RegisterBasic(DisplayModeProvider.Instance);
+            //DisplayModeConfig.RegisterBasic(DisplayModeProvider.Instance);
+            DisplayModeConfig.Register(DisplayModeProvider.Instance);
         }
     }
 }
