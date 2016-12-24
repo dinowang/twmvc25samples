@@ -127,7 +127,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CtrlTestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ViewTestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -157,6 +156,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Home\Index.Preview.cshtml">
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Content>
     <Content Include="Views\Shared\_Layout.Mobile.cshtml">
       <DependentUpon>_Layout.cshtml</DependentUpon>
     </Content>
