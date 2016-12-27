@@ -94,14 +94,15 @@ namespace twmvc25
             var builder = new DisplayModeMatrixBuilder();
 
             var profiles = builder
+                            .SetEvaluateBehavior(EvaluateBehavior.Lazy)
                             .AddOptionalFactor("Device", o => o
-                                     .Evidence("Tablet", x => Regex.IsMatch(x.GetOverriddenUserAgent(), @"\b(iPad|Tablet)\b"))
-                                     .Evidence("Mobile", x => x.GetOverriddenBrowser().IsMobileDevice))
+                                        .Evidence("Tablet", x => Regex.IsMatch(x.GetOverriddenUserAgent(), @"\b(iPad|Tablet)\b"))
+                                        .Evidence("Mobile", x => x.GetOverriddenBrowser().IsMobileDevice))
                             .AddOptionalFactor("Theme", o => o
-                                     .Evidence("Dark", x => x.Request.Cookies.AllKeys.Contains("Theme") && x.Request.Cookies["Theme"].Value == "dark")
-                                     .Evidence("Light", x => x.Request.Cookies.AllKeys.Contains("Theme") && x.Request.Cookies["Theme"].Value == "light"))
+                                        .Evidence("Dark", x => x.Request.Cookies.AllKeys.Contains("Theme") && x.Request.Cookies["Theme"].Value == "dark")
+                                        .Evidence("Light", x => x.Request.Cookies.AllKeys.Contains("Theme") && x.Request.Cookies["Theme"].Value == "light"))
                             .AddOptionalFactor("Preview", o => o
-                                     .Evidence("Preview", x => x.Request.Cookies.AllKeys.Contains("Preview")))
+                                        .Evidence("Preview", x => x.Request.Cookies.AllKeys.Contains("Preview")))
                             .Build();
 
             instance.Modes.Clear();

@@ -33,6 +33,26 @@
     @RenderBody()
     <hr/>
     Mobile
+    <div class="row">
+        <div class="col-md-4">
+            <h2>View A/B testing</h2>
+            <p class="text-muted">難度 ★ / ★★★</p>
+            <p>
+                @Html.Action("Setup", "Home")
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Display Mode candidates</h2>
+            @Html.Partial("_DisplayModeCandidates")
+        </div>
+        <div class="col-md-4">
+            <h2>Action A/B testing</h2>
+            <p class="text-muted">難度 ★★★</p>
+            @*<p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>*@
+            <p><a class="btn btn-default" href="@Url.Action("Index", "CtrlTest")" target="_blank">Learn more &raquo;</a></p>
+        </div>
+    </div>
+    <hr />
     <footer>
         <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
     </footer>

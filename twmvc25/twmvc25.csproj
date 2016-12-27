@@ -45,8 +45,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Hexdigits.DisplayModeMatrix, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DisplayModeMatrix.1.1.1\lib\Hexdigits.DisplayModeMatrix.dll</HintPath>
+    <Reference Include="Hexdigits.DisplayModeMatrix, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DisplayModeMatrix.1.2.0\lib\Hexdigits.DisplayModeMatrix.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -184,7 +184,7 @@
     <Content Include="Views\CtrlTest\Index.cshtml" />
     <Content Include="Views\ViewTest\Index.cshtml" />
     <Content Include="Views\Home\Setup.cshtml" />
-    <Content Include="Views\Shared\_DisplayModeCabdidates.cshtml" />
+    <Content Include="Views\Shared\_DisplayModeCandidates.cshtml" />
     <Content Include="Views\CtrlTest\IndexPreview.cshtml" />
   </ItemGroup>
   <ItemGroup>
