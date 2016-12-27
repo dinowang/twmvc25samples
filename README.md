@@ -7,13 +7,15 @@ A/B testing aka split testing, bucket testing
 twMVC#25 | ASP.NET MVC A/B Testing 的眉眉角角
 
 - [Event Information](https://mvc.tw/event/2016/12/24)
-- [Slide](https://mvc.tw/event/2016/12/24)
+- [Slide](https://docs.com/is-twMVC/2370/twmvc-25-asp-net-mvc-ab-testing)
 
 ## Sample highlights
 
 ### View A/B Testing
 
 Using ASP.NET MVC Display Modes approach, see [~/App_Start/DisplayModeConfig.cs](twmvc25/App_Start/DisplayModeConfig.cs)
+
+Leverage DisplayModeMatrix nuget package to help organizing complex Display Modes.
 
 ### Action A/B Testing
 
